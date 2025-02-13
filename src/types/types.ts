@@ -24,6 +24,7 @@ export interface SearchFilters {
     size?: number;
     sort?: string;
     from?: number;
+    zip_code?: string;
 }
 
 export interface SearchResponse {

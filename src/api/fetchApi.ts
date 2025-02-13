@@ -32,6 +32,11 @@ export const fetchApi = {
         return response.data;
     },
 
+    getLocations: async (): Promise<Location[]> => {
+        const response = await api.post('/locations/search', {size: 10000});
+        return response.data.results;
+    },
+
     getMatch: async (dogIds: string[]): Promise<{ match: string }> => {
         const response = await api.post('/dogs/match', dogIds);
         return response.data;

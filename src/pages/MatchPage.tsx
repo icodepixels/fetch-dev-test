@@ -66,7 +66,7 @@ export const MatchPage = () => {
                         Age: {matchedDog.age} years
                     </Typography>
                     <Typography variant="body1">
-                        Location: {matchedDog.zip_code}
+                        Zip Code: {matchedDog.zip_code}
                     </Typography>
                 </CardContent>
             </Card>

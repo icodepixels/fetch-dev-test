@@ -35,7 +35,7 @@ export const DogCard = ({ dog }: DogCardProps) => {
                 </Box>
                 <Typography variant="body1">Breed: {dog.breed}</Typography>
                 <Typography variant="body2">Age: {dog.age} years</Typography>
-                <Typography variant="body2">Location: {dog.zip_code}</Typography>
+                <Typography variant="body2">Zip Code: {dog.zip_code}</Typography>
             </CardContent>
         </Card>
     );

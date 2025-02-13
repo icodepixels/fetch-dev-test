@@ -9,6 +9,7 @@ import { useNavigate } from 'react-router-dom';
 import { useStore } from '../store/useStore';
 
 export const SearchPage = () => {
+    const { searchDogs, getDogs } = fetchApi;
     const [dogs, setDogs] = useState<Dog[]>([]);
     const [totalPages, setTotalPages] = useState(1);
     const [page, setPage] = useState(1);
@@ -22,13 +23,13 @@ export const SearchPage = () => {
 
     const loadDogs = async () => {
         try {
-            const searchResponse = await fetchApi.searchDogs({
+            const searchResponse = await searchDogs({
                 ...filters,
                 size: 20,
                 from: (page - 1) * 20
             });
 
-            const dogsData = await fetchApi.getDogs(searchResponse.resultIds);
+            const dogsData = await getDogs(searchResponse.resultIds);
             setDogs(dogsData);
             setTotalPages(Math.ceil(searchResponse.total / 20));
         } catch (error) {
