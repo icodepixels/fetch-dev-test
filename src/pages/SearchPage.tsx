@@ -53,12 +53,12 @@ export const SearchPage = () => {
     };
 
     return (
-        <Container maxWidth="lg" sx={{ py: 4 }}>
-            <Box sx={{ mb: 4 }}>
+        <Container maxWidth="lg" sx={{ py: 4, height: '100vh', display: 'flex', flexDirection: 'column' }}>
+            <Box sx={{ mb: 4, flexShrink: 0 }}>
                 <SearchFilters onFilterChange={handleFilterChange} />
             </Box>
 
-            <Box sx={{ mb: 2, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+            <Box sx={{ mb: 2, display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexShrink: 0 }}>
                 <Typography variant="h6">
                     {favorites.size} dogs selected
                 </Typography>
@@ -71,9 +71,16 @@ export const SearchPage = () => {
                 </Button>
             </Box>
 
-            <DogGrid dogs={dogs} />
+            <Box sx={{
+                flexGrow: 1,
+                overflowY: 'auto',
+                pr: 1,
+                mr: -1
+            }}>
+                <DogGrid dogs={dogs} />
+            </Box>
 
-            <Box sx={{ mt: 4, display: 'flex', justifyContent: 'center' }}>
+            <Box sx={{ mt: 4, display: 'flex', justifyContent: 'center', flexShrink: 0 }}>
                 <Pagination
                     count={totalPages}
                     page={page}
