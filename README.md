@@ -1,4 +1,5 @@
-# Dog Finder App
+# Fetch Take Home Project
+## Dog Finder App
 
 A React application that helps users search and match with adoptable dogs from a shelter database.
 
